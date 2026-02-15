@@ -45,7 +45,7 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 
 
 (function() {
-    emailjs.init("4iNmBJBSbFKnpor8Y");
+    emailjs.init("PUBLIC_ID");
 })();
 
 const contactForm = document.getElementById("contactform");
@@ -54,7 +54,7 @@ if (contactForm) {
     contactForm.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        emailjs.sendForm("service_o28u7yn", "template_1f39vri", this)
+        emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", this)
             .then(function() {
                 alert("Message sent successfully!");
                 contactForm.reset();
@@ -66,7 +66,7 @@ if (contactForm) {
     });
 }
 const now = new Date().toLocaleString();
-emailjs.send("service_o28u7yn", "template_1f39vri", {
+emailjs.send("SERVICE_ID", "TEMPLATE_ID", {
     name: contactForm.name.value,
     email: contactForm.email.value,
     message: contactForm.message.value,
